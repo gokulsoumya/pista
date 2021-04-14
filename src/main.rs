@@ -46,7 +46,7 @@ fn pista(zsh: bool) -> String {
     let prompt_char = prompt_char::get_char();
     if zsh {
         format!(
-            "%{{{cwd} {branch} {status}%}} %{{\n{venv}{pchar}%}} ",
+            "\n%{{{cwd} {branch} {status}%}} %{{\n{venv}{pchar}%}} ",
             cwd = cwd,
             branch = branch,
             status = status,
@@ -55,7 +55,7 @@ fn pista(zsh: bool) -> String {
         )
     } else {
         format!(
-            "{cwd} {branch} {status}\n{venv}{nix}{pchar} ",
+            "\n{cwd} {branch} {status}\n{venv}{nix}{pchar} ",
             cwd = cwd,
             branch = branch,
             status = status,
