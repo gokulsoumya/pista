@@ -9,8 +9,8 @@ pub fn get_char() -> colored::ColoredString {
 
     let euid = unsafe { libc::geteuid() };
     match euid {
-        0 => return root_char.color(root_char_color),
-        _ => return user_char.color(user_char_color)
+        0 => return root_char.color(root_char_color).bold(),
+        _ => return user_char.color(user_char_color).bold()
     }
 }
 
